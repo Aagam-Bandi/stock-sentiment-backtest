@@ -1,8 +1,8 @@
-# Stock Sentiment Backtest — A Post-Mortem
+# Stock Sentiment Backtest
 
-A news-sentiment trading pipeline: pull headlines, score them with VADER, join to daily prices, generate signals, backtest.
+A news-sentiment trading pipeline — pull headlines, score them with VADER, join to daily prices, generate signals, backtest — built with transaction costs, adverse slippage on both sides, a buy-and-hold benchmark, walk-forward window analysis, and sample-adequacy gating that refuses to report a result it can't support.
 
-It originally reported a Sharpe ratio of 1.25 across 100+ signals. **That number was wrong.** This repository contains the corrected, tested pipeline and a written account of the three bugs that produced it.
+Most of that instrumentation exists for a reason. An earlier version of this pipeline reported a Sharpe ratio of 1.25 that turned out to be an artifact of three bugs, none of which any metric in the original would have caught. The audit is written up below; what's in this repository is the rebuild.
 
 ```bash
 pip install -r requirements.txt
